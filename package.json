@@ -1,5 +1,5 @@
 {
-  "name": "@gkd-kit/subscription",
+  "name": "@callmebill/subscription",
   "type": "module",
   "version": "1.186.0",
   "main": "./dist/gkd.json5",
