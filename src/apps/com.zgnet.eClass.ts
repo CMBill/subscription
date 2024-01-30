@@ -7,11 +7,13 @@ export default defineAppConfig({
     {
       key: 1,
       name: '开屏广告',
-      activityIds: ['com.zgnet.eClass.ui.SplashActivity'],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           matches: 'TextView[id$="tv_close_time"&&text^="关闭"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12644260'],
+          snapshotUrls: ['https://i.gkd.li/import/12644260'],
         },
       ],
     },
@@ -23,7 +25,7 @@ export default defineAppConfig({
         {
           matches:
             '[text*="确定要退出"] < LinearLayout +n LinearLayout > TextView[id$="tv_exit_sure"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12645513'],
+          snapshotUrls: ['https://i.gkd.li/import/12645513'],
         },
       ],
     },

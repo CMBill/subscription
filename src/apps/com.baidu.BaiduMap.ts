@@ -3,21 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.BaiduMap',
   name: '百度地图',
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      quickFind: true,
-      matchLauncher: true,
-      activityIds: 'com.baidu.baidumaps.MapsActivity',
-      rules: ['TextView[text^="跳过"][text.length<=5]'],
-      snapshotUrls: [
-        'https://i.gkd.li/import/12924598',
-        'https://i.gkd.li/import/12909174',
-        'https://i.gkd.li/import/12909201',
-        'https://i.gkd.li/import/13074377',
-      ],
-    },
     {
       key: 1,
       name: '地图上方黄页横幅',
@@ -29,8 +16,8 @@ export default defineAppConfig({
       ],
       rules: 'ImageView[id="com.baidu.BaiduMap:id/yellow_banner_close"]',
       snapshotUrls: [
-        'https://gkd-kit.gitee.io/import/12642301',
-        'https://gkd-kit.gitee.io/import/12801465',
+        'https://i.gkd.li/import/12642301',
+        'https://i.gkd.li/import/12801465',
         'https://i.gkd.li/import/12909281',
       ],
     },
@@ -40,7 +27,7 @@ export default defineAppConfig({
       quickFind: true,
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: 'RelativeLayout[id="com.baidu.BaiduMap:id/rl_close_content"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12642307',
+      snapshotUrls: 'https://i.gkd.li/import/12642307',
     },
     {
       enable: false,
@@ -49,7 +36,7 @@ export default defineAppConfig({
       quickFind: true,
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: '[text="美食大礼包"] +(6) TextView[id=null][clickable=true]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12642310',
+      snapshotUrls: 'https://i.gkd.li/import/12642310',
     },
     {
       enable: false,
@@ -58,7 +45,7 @@ export default defineAppConfig({
       quickFind: true,
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: '[id="lottie_box"] + TextView[id=null][clickable=true]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12642319',
+      snapshotUrls: 'https://i.gkd.li/import/12642319',
     },
     {
       enable: false,
@@ -73,12 +60,12 @@ export default defineAppConfig({
         {
           matches:
             '[text^="开启位置服务"] + RelativeLayout > [id="com.baidu.BaiduMap:id/tv_notip_btn"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12660884',
+          snapshotUrls: 'https://i.gkd.li/import/12660884',
         },
         {
           matches:
             '[text="需开启系统定位服务开关"] +2 [id="com.baidu.BaiduMap:id/ll_dialog_btn"] > [id="com.baidu.BaiduMap:id/tv_dialog_cancel"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12660883',
+          snapshotUrls: 'https://i.gkd.li/import/12660883',
         },
         {
           matches:
@@ -111,6 +98,31 @@ export default defineAppConfig({
       activityIds: 'com.baidu.baidumaps.MapsActivity',
       rules: 'ImageView[id="com.baidu.BaiduMap:id/cancel_update"]',
       snapshotUrls: 'https://i.gkd.li/import/12909385',
+    },
+    {
+      enable: false,
+      key: 8,
+      name: '打开通知权限',
+      quickFind: true,
+      activityIds: 'com.baidu.baidumaps.MapsActivity',
+      rules:
+        '[text="打开通知权限"] <n LinearLayout + ImageView[id="com.baidu.BaiduMap:id/push_close"]',
+      snapshotUrls: 'https://i.gkd.li/import/13258995',
+    },
+    {
+      enable: false,
+      key: 9,
+      name: '通勤卡-添加至桌面',
+      desc: '点击取消',
+      quickFind: true,
+      actionMaximum: 1,
+      rules: [
+        {
+          activityIds: 'com.baidu.baidumaps.MapsActivity',
+          matches: 'TextView[id="com.baidu.BaiduMap:id/tv_dialog_cancel"]',
+          snapshotUrls: 'https://i.gkd.li/import/13439258',
+        },
+      ],
     },
   ],
 });

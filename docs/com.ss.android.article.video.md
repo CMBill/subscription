@@ -1,7 +1,27 @@
 # 西瓜视频
 
-存在 1 规则组 - [com.ss.android.article.video](/src/apps/com.ss.android.article.video.ts)
+存在 4 规则组 - [com.ss.android.article.video](/src/apps/com.ss.android.article.video.ts)
 
-## 西瓜视频-关闭青少年模式弹窗
+## 青少年模式弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12472628)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12472628)
+
+## 更新弹窗
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13328430)
+
+## 通知弹窗
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13456568)
+
+## 红包弹窗
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13620299)

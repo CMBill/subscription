@@ -7,12 +7,15 @@ export default defineAppConfig({
     {
       key: 0,
       name: '开屏广告',
-      activityIds: ['com.weihudashi.activity.AdvertisementActivity'],
+      actionMaximum: 1,
+      matchTime: 10000,
+      quickFind: true,
+      resetMatch: 'app',
       rules: [
         {
           matches:
             '[id="com.example.maintenancemaster:id/advertisement_countdown_ccd"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12903877'],
+          snapshotUrls: ['https://i.gkd.li/import/12903877'],
         },
       ],
     },

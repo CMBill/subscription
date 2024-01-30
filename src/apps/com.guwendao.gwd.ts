@@ -1,4 +1,3 @@
-import { machine } from 'os';
 import { defineAppConfig } from '../types';
 
 export default defineAppConfig({
@@ -41,7 +40,7 @@ export default defineAppConfig({
           key: 3,
           matches:
             'ImageView < FrameLayout + FrameLayout > FrameLayout > ImageView[id=null]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12924728',
+          snapshotUrls: 'https://i.gkd.li/import/12924728',
         },
 
         // 字节广告

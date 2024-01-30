@@ -4,4 +4,6 @@
 
 ## 忽略授权提示
 
-- [快照-0](https://gkd-kit.gitee.io/import/12829909)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12829909)

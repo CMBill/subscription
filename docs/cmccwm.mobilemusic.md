@@ -2,6 +2,8 @@
 
 存在 1 规则组 - [cmccwm.mobilemusic](/src/apps/cmccwm.mobilemusic.ts)
 
-## 开屏广告
+## 版本更新
 
-- [快照-0](https://i.gkd.li/import/12852498)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13448898)

@@ -1,14 +1,10 @@
 # 掌上公交
 
-存在 6 规则组 - [com.mygolbs.mybus](/src/apps/com.mygolbs.mybus.ts)
-
-## 开屏广告
-
-- [快照-0](https://i.gkd.li/import/12745634)
-- [快照-1](https://i.gkd.li/import/12790377)
-- [快照-2](https://i.gkd.li/import/12790485)
+存在 5 规则组 - [com.mygolbs.mybus](/src/apps/com.mygolbs.mybus.ts)
 
 ## 广告卡片
+
+默认禁用
 
 - [快照-0](https://i.gkd.li/import/12790521)
 - [快照-1](https://i.gkd.li/import/12790706)
@@ -28,9 +24,13 @@
 
 ## 广告弹窗
 
+默认禁用
+
 - [快照-0](https://i.gkd.li/import/12790762)
 
 ## 顶栏小广告
+
+默认禁用
 
 - [快照-0](https://i.gkd.li/import/12790841)
 
@@ -38,10 +38,10 @@
 
 默认禁用 - 自动点击【取消】
 
-- [快照-0](https://gkd-kit.gitee.io/import/12715980)
+- [快照-0](https://i.gkd.li/import/12715980)
 
 ## 签到成功弹窗
 
 默认禁用 - 自动点击x按钮
 
-- [快照-0](https://gkd-kit.gitee.io/import/12716035)
+- [快照-0](https://i.gkd.li/import/12716035)

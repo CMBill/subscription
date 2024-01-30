@@ -7,17 +7,16 @@ export default defineAppConfig({
     {
       key: 0,
       name: '开屏广告',
-      activityIds: [
-        'com.huawei.video.content.impl.explore.main.activity.MainActivity',
-        'com.huawei.himovie.ui.login.SplashScreenActivity',
-      ],
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: {
         matches: '[id="com.huawei.hms.ads.uiengine:id/hiad_skip_text"]',
         action: 'clickCenter',
       },
       snapshotUrls: [
-        'https://gkd-kit.gitee.io/import/12814007',
-        'https://gkd-kit.gitee.io/import/12819351',
+        'https://i.gkd.li/import/12814007',
+        'https://i.gkd.li/import/12819351',
       ],
     },
   ],

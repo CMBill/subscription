@@ -8,4 +8,6 @@
 
 ## 弹窗广告
 
-- [快照-0](https://gkd-kit.gitee.io/import/12840924)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12840924)

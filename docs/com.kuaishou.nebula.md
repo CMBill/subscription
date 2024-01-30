@@ -2,6 +2,8 @@
 
 存在 1 规则组 - [com.kuaishou.nebula](/src/apps/com.kuaishou.nebula.ts)
 
-## 开屏广告
+## 青少年弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12519389)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13196316)

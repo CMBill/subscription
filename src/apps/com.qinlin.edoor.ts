@@ -14,7 +14,21 @@ export default defineAppConfig({
             '[id="com.qinlin.edoor:id/reaper_ad_source_layout"]',
             '[id="com.qinlin.edoor:id/close"]',
           ],
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12707733',
+          snapshotUrls: 'https://i.gkd.li/import/12707733',
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '弹窗广告',
+      rules: [
+        {
+          key: 0,
+          name: '穿山甲SDK',
+          quickFind: true,
+          matches:
+            '@[id="com.qinlin.edoor:id/iv_close"] - LinearLayout >n [text*="广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/13771774',
         },
       ],
     },
@@ -24,7 +38,7 @@ export default defineAppConfig({
       name: '开门有奖弹窗',
       activityIds: 'com.qinlin.edoor.MainActivity',
       rules: '[desc="开门有奖"] +2 [desc="立即领取"] + ImageView',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12707736',
+      snapshotUrls: 'https://i.gkd.li/import/12707736',
     },
     {
       enable: false,
@@ -32,7 +46,7 @@ export default defineAppConfig({
       name: '获得金币弹窗',
       activityIds: 'com.qinlin.edoor.MainActivity',
       rules: ['[desc="获得金币"] +3 [desc="开心收下"] + ImageView'],
-      snapshotUrls: ['https://gkd-kit.gitee.io/import/12707738'],
+      snapshotUrls: ['https://i.gkd.li/import/12707738'],
     },
   ],
 });

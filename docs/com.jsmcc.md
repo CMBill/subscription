@@ -2,7 +2,8 @@
 
 存在 1 规则组 - [com.jsmcc](/src/apps/com.jsmcc.ts)
 
-## 开屏广告
+## 版本更新
 
-- [快照-0](https://gkd-kit.gitee.io/import/12830488)
-- [快照-1](https://gkd-kit.gitee.io/import/12830580)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13327322)

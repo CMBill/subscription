@@ -3,52 +3,29 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.netdisk',
   name: '百度网盘',
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      quickFind: true,
-      activityIds: [
-        'com.baidu.netdisk.ui.Navigate',
-        'com.baidu.netdisk.ui.DefaultMainActivity',
-        'com.baidu.netdisk.ui.MainActivity',
-      ],
-      rules: [
-        {
-          matches: 'TextView[text^="跳过"][clickable=true]',
-          snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12472597',
-            'https://i.gkd.li/import/12877626',
-            'https://i.gkd.li/import/12988458',
-          ],
-        },
-        {
-          matches: '@TextView[text^="跳过"] + TextView[text="广告"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12648924',
-        },
-        {
-          matches: '[id="com.baidu.netdisk:id/countdown"][text^="跳过"]',
-          snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12706553',
-            'https://gkd-kit.gitee.io/import/12865287',
-          ],
-        },
-        '[id="com.byted.pangle:id/tt_splash_skip_btn"]', // 1687136781353
-      ],
-    },
     {
       key: 1,
       name: '活动弹窗',
       desc: '关闭各种活动弹窗信息',
       quickFind: true,
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: [
         {
-          matches: '[id="com.baidu.netdisk:id/iv_close"]',
-          snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12642505',
-            'https://gkd-kit.gitee.io/import/12923937',
-          ],
+          key: 1,
+          name: '一刻相册推广弹窗',
+          activityIds: 'com.baidu.netdisk.ui.MainActivity',
+          matches:
+            '[id="com.baidu.netdisk:id/cl_content"] - [id="com.baidu.netdisk:id/iv_close"]',
+          snapshotUrls: ['https://i.gkd.li/import/12642505'],
+        },
+        {
+          key: 2,
+          name: 'VIP弹窗',
+          activityIds: 'com.baidu.netdisk.business.guide.dialog.lifeproduct.', // LifeV10GuideDialog
+          matches:
+            '[id="com.baidu.netdisk:id/view_content_bg2"] - [id="com.baidu.netdisk:id/iv_close"]',
+          snapshotUrls: ['https://i.gkd.li/import/12923937'],
         },
       ],
     },
@@ -58,7 +35,7 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       quickFind: true,
       rules: '[id="com.baidu.netdisk:id/banner_item_close"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12706544',
+      snapshotUrls: 'https://i.gkd.li/import/12706544',
     },
     {
       key: 3,
@@ -67,7 +44,7 @@ export default defineAppConfig({
       quickFind: true,
       rules:
         '[id="com.baidu.netdisk:id/vf_content"] + [id="com.baidu.netdisk:id/close"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12706544',
+      snapshotUrls: 'https://i.gkd.li/import/12706544',
     },
     {
       key: 4,
@@ -75,7 +52,7 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       quickFind: true,
       rules: '@TextView + [text="专属福利"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12706549',
+      snapshotUrls: 'https://i.gkd.li/import/12706549',
     },
     {
       key: 5,
@@ -85,16 +62,16 @@ export default defineAppConfig({
         'com.baidu.netdisk.cloudimage.ui.album.AlbumGuideOneImageDialog',
       rules:
         '@ImageView[id="com.baidu.netdisk:id/close_btn"] + ImageView[id="com.baidu.netdisk:id/bg_image"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12648987',
+      snapshotUrls: 'https://i.gkd.li/import/12648987',
     },
     {
-      enable: false,
       key: 6,
-      name: '更新提醒弹窗',
+      name: '更新弹窗',
       quickFind: true,
-      activityIds: 'com.baidu.netdisk.ui.MainActivity',
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[text="立即更新"] -n [text="下次再说"]', //使用ID会导致误触（例如删除确认https://i.gkd.li/import/13069049）
-      snapshotUrls: ['https://gkd-kit.gitee.io/import/12863984'],
+      snapshotUrls: 'https://i.gkd.li/import/12863984',
     },
     {
       key: 7,
@@ -105,7 +82,7 @@ export default defineAppConfig({
       rules: [
         {
           matches: 'View[desc="续费"] + ImageView',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12924036',
+          snapshotUrls: 'https://i.gkd.li/import/12924036',
         },
       ],
     },
@@ -117,7 +94,7 @@ export default defineAppConfig({
       quickFind: true,
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules: 'ImageView[id="com.baidu.netdisk:id/dialog_cancel"]', //单独使用ID会导致误触（例如删除确认https://i.gkd.li/import/13069049）
-      snapshotUrls: ['https://gkd-kit.gitee.io/import/12923936'],
+      snapshotUrls: ['https://i.gkd.li/import/12923936'],
     },
     {
       enable: false,
@@ -129,6 +106,20 @@ export default defineAppConfig({
       rules:
         'ViewGroup > [id="com.baidu.netdisk:id/background_image"] +n [id="com.baidu.netdisk:id/iv_close"]',
       snapshotUrls: 'https://i.gkd.li/import/12783106',
+    },
+    {
+      key: 11,
+      quickFind: true,
+      name: '幸运券包弹窗',
+      desc: '自动点击关闭',
+      activityIds: 'com.baidu.netdisk.ui.MainActivity',
+      rules: [
+        {
+          matches:
+            '[id="com.baidu.netdisk:id/tv_title"][text^="恭喜获得"] -3 ImageView[clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/13806852',
+        },
+      ],
     },
   ],
 });

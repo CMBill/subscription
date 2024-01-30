@@ -1,15 +1,15 @@
 # 小米有品
 
-存在 3 规则组 - [com.xiaomi.youpin](/src/apps/com.xiaomi.youpin.ts)
-
-## 开屏广告
-
-- [快照-0](https://gkd-kit.gitee.io/import/12836717)
+存在 2 规则组 - [com.xiaomi.youpin](/src/apps/com.xiaomi.youpin.ts)
 
 ## 广告弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12836727)
+默认禁用
 
-## 版本升级弹窗
+- [快照-0](https://i.gkd.li/import/12836727)
 
-- [快照-0](https://gkd-kit.gitee.io/import/12836775)
+## 更新提示-版本升级弹窗
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12836775)

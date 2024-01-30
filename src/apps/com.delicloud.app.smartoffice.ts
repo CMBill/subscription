@@ -7,13 +7,13 @@ export default defineAppConfig({
     {
       key: 0,
       name: '开屏广告',
-      activityIds: 'com.delicloud.app.smartoffice.mvp.ui.JiGuangSpalshActivity',
-      rules: [
-        {
-          matches: '[id="com.byted.pangle:id/tt_splash_skip_btn"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12843738'],
-        },
-      ],
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules:
+        '@View[clickable=true] <2 FrameLayout <2 FrameLayout <<2 FrameLayout[id="com.delicloud.app.smartoffice:id/splash_container"]',
+      snapshotUrls: ['https://i.gkd.li/import/13840775'],
     },
   ],
 });

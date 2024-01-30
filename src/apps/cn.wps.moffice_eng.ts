@@ -3,13 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'cn.wps.moffice_eng',
   name: 'WPS',
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      activityIds: 'cn.wps.moffice.documentmanager.PreStartActivity',
-      rules: '[id=`cn.wps.moffice_eng:id/splash_skip`]',
-    },
     {
       key: 1,
       name: '首页-文档列表广告',
@@ -18,21 +13,24 @@ export default defineAppConfig({
       ],
       activityIds: [
         'cn.wps.moffice.main.StartPublicActivity',
+        'cn.wps.moffice.documentmanager.PreStartActivity',
         'cn.wps.moffice.main.local.HomeRootActivity',
       ],
       rules: [
         {
-          matches: '[text="关闭当前广告"||text="不喜欢此广告"]',
+          key: 0,
+          matches: '[id$="/nativeclose"]',
           snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12505365',
-            'https://i.gkd.li/import/12882277',
+            'https://i.gkd.li/import/12505350',
+            'https://i.gkd.li/import/12505286',
           ],
         },
         {
-          matches: '[id$="/nativeclose"]',
+          preKeys: 0,
+          matches: '[text="关闭当前广告"||text="不喜欢此广告"]',
           snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12505350',
-            'https://gkd-kit.gitee.io/import/12505286',
+            'https://i.gkd.li/import/12505365',
+            'https://i.gkd.li/import/13259090',
           ],
         },
       ],
@@ -40,13 +38,14 @@ export default defineAppConfig({
     {
       key: 2,
       name: '首页-弹窗广告',
+      quickFind: true,
       activityIds: [
         'cn.wps.moffice.main.AfterLoginActivity',
         'com.android.packageinstaller.permission.ui.GrantPermissionsActivity',
       ],
       rules: '[id="cn.wps.moffice_eng:id/afterlogin_cancel"]',
       snapshotUrls: [
-        'https://i.gkd.li/import/12882589',
+        'https://i.gkd.li/import/13259097',
         'https://i.gkd.li/import/12882712',
       ],
     },
@@ -87,6 +86,35 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/import/12882554',
         },
       ],
+    },
+    {
+      key: 5,
+      name: '文档末尾广告',
+      activityIds: [
+        'cn.wps.moffice.writer.multiactivity.Writer', //Writer1,Writer2...
+      ],
+      rules: [
+        {
+          key: 1,
+          matches:
+            '[id="cn.wps.moffice_eng:id/doc_end_ad_container_main"] >2 [id="cn.wps.moffice_eng:id/btn_close"]',
+          snapshotUrls: 'https://i.gkd.li/import/13513911',
+        },
+        {
+          preKeys: 1,
+          key: 2,
+          matches: '[text="关闭当前广告"]',
+          snapshotUrls: 'https://i.gkd.li/import/13513914',
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '首页-底部广告',
+      quickFind: true,
+      activityIds: 'cn.wps.moffice.main.local.HomeRootActivity',
+      rules: '[id="cn.wps.moffice_eng:id/home_banner_ad_spread_close"]',
+      snapshotUrls: 'https://i.gkd.li/import/13804525',
     },
   ],
 });

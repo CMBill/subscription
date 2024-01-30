@@ -7,7 +7,10 @@ export default defineAppConfig({
     {
       key: -1,
       name: '开屏广告',
-      activityIds: 'com.ky.medical.reference.activity.InitActivity',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: '[id="com.ky.medical.reference:id/btn_go"][text^="关闭"]',
       snapshotUrls: 'https://i.gkd.li/import/12918049',
     },
@@ -18,7 +21,7 @@ export default defineAppConfig({
       rules: [
         {
           matches: '[id="com.ky.medical.reference:id/icClose"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12840924',
+          snapshotUrls: 'https://i.gkd.li/import/12840924',
         },
       ],
     },

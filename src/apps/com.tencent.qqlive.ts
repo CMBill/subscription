@@ -3,70 +3,159 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.qqlive',
   name: '腾讯视频',
+  deprecatedKeys: [5, 19],
   groups: [
     {
       key: 0,
       name: '开屏广告',
-      matchLauncher: true,
       quickFind: true,
-      activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
-          matches: 'FrameLayout[id=null] > TextView[text="跳过"][id=null]',
+          matches: 'TextView[text*="跳过"][text.length<=10]',
           snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12700227',
-            'https://gkd-kit.gitee.io/import/12700122',
-            'https://gkd-kit.gitee.io/import/12700541',
-            'https://gkd-kit.gitee.io/import/12910953',
+            'https://i.gkd.li/import/12700227',
+            'https://i.gkd.li/import/12700122',
+            'https://i.gkd.li/import/12700541',
+            'https://i.gkd.li/import/12910953',
           ],
         },
       ],
     },
     {
       key: 1,
-      name: '关闭青少年弹窗',
-      activityIds: [
-        'com.tencent.qqlive.ona.update.trunk.client.TrunkUpdateActivity',
-        'com.tencent.qqlive.ona.activity.SplashHomeActivity',
-      ],
-      rules:
-        'TextView[text*="青少年模式"] +n TextView[id="com.tencent.qqlive:id/arg"][text="我知道了"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12700145',
+      name: '青少年模式弹窗',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      quickFind: true,
+      rules: 'TextView[text*="青少年模式"] +n TextView[text="我知道了"]',
+      snapshotUrls: 'https://i.gkd.li/import/12700145',
     },
     {
       key: 2,
       name: '更新弹窗',
-      activityIds: [
-        'com.tencent.qqlive.ona.update.trunk.client.TrunkUpdateActivity',
-      ],
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules:
-        '@[text="暂不升级"] - LinearLayout > FrameLayout > [text="立即升级"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12700486',
+        '[text^="有新版本"] + FrameLayout + LinearLayout + [text="暂不升级"]',
+      snapshotUrls: [
+        'https://i.gkd.li/import/12700486',
+        'https://i.gkd.li/import/13799951',
+      ],
     },
     {
       key: 3,
-      name: '首页-顶部广告卡片',
-      activityIds: ['com.tencent.qqlive.ona.activity.SplashHomeActivity'],
+      name: '卡片式广告',
       rules: [
         {
-          desc: '点击右上角[广告]',
+          key: 0,
+          name: '首页顶部卡片广告',
+          activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
           matches:
-            'FrameLayout - RelativeLayout > RelativeLayout > FrameLayout + ImageView[clickable=true]',
+            'FrameLayout - RelativeLayout > RelativeLayout > FrameLayout + ImageView[clickable=true][childCount=0][visibleToUser=true]',
           snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12700299',
-            'https://gkd-kit.gitee.io/import/12700302',
+            'https://i.gkd.li/import/12700299',
+            'https://i.gkd.li/import/12700302',
+            'https://i.gkd.li/import/13685929', // 限定 visibleToUser=true 防止误触
           ],
         },
         {
-          desc: '点击右上角[关闭广告]',
+          key: 1,
+          name: '首页顶部背景广告',
+          activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
           matches: '[text="关闭广告"][clickable=true]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12700518'],
+          snapshotUrls: 'https://i.gkd.li/import/12700518',
         },
         {
-          desc: '点击右上角[广告]',
+          key: 2,
+          name: '个人中心页卡片广告',
+          activityIds: [
+            'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+            'com.tencent.qqlive.ona.offline.client.group.DownloadGroupActivity',
+          ],
+          matches:
+            'ViewGroup > TextView + LinearLayout[childCount=2] + ImageView[clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12700175',
+            'https://i.gkd.li/import/13759380',
+          ],
+        },
+        {
+          key: 3,
+          name: '个人中心页顶部背景广告',
+          activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+          matches:
+            'RelativeLayout > FrameLayout + @ImageView[clickable=true] + ImageView + ImageView',
+          snapshotUrls: 'https://i.gkd.li/import/12777344',
+        },
+        {
+          key: 4,
+          name: '点击右上角[广告]',
+          activityIds: [
+            'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+            'com.tencent.qqlive.ona.activity.VideoDetailActivity',
+          ],
           matches:
             'RelativeLayout[id=null] > @FrameLayout[clickable=true][id!=null] > ImageView[desc="the ad tag"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12737313',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12737313',
+            'https://i.gkd.li/import/13685842',
+          ],
+        },
+        {
+          key: 5,
+          name: '点击右下角关闭',
+          matches:
+            'ImageView[childCount=0] <<2 RelativeLayout + FrameLayout + RelativeLayout > RelativeLayout > RelativeLayout > ImageView',
+          snapshotUrls: 'https://i.gkd.li/import/13426421',
+        },
+        // 以下是配合本规则组内其他key使用的规则，反馈界面的规则都是一样的
+        {
+          key: 97,
+          name: '广告反馈卡片-点击不感兴趣',
+          activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+          matches: 'LinearLayout > [text="不感兴趣"]',
+          snapshotUrls: 'https://i.gkd.li/import/13695084',
+        },
+        {
+          key: 98,
+          name: '广告反馈卡片-选择原因',
+          quickFind: true,
+          activityIds: [
+            'com.tencent.qqlive.qaduikit.common.dialog.feedback.variable.QAdFeedbackVariableDislikeItemDialog',
+            'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+            'com.tencent.qqlive.ona.activity.VideoDetailActivity',
+            'com.tencent.qqlive.ona.offline.client.group.DownloadGroupActivity',
+          ],
+          matches:
+            '[text="关闭这条广告的原因"] +(2) RecyclerView > [text="不感兴趣"]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12700303',
+            'https://i.gkd.li/import/12829866',
+            'https://i.gkd.li/import/13685871',
+            'https://i.gkd.li/import/13703219',
+          ],
+        },
+        {
+          preKeys: [98],
+          key: 99,
+          name: '广告反馈卡片-确认原因',
+          quickFind: true,
+          activityIds: [
+            'com.tencent.qqlive.qaduikit.common.dialog.feedback.variable.QAdFeedbackVariableDislikeItemDialog',
+            'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+            'com.tencent.qqlive.ona.activity.VideoDetailActivity',
+            'com.tencent.qqlive.ona.offline.client.group.DownloadGroupActivity',
+          ],
+          matches:
+            '[text="关闭这条广告的原因"] + [text="确认"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/import/12700210',
+            'https://i.gkd.li/import/13685877',
+            'https://i.gkd.li/import/13703298',
+          ],
         },
       ],
     },
@@ -74,82 +163,73 @@ export default defineAppConfig({
       key: 4,
       name: '视频播放时的广告',
       desc: '自动点击 跳过广告',
-      activityIds: ['com.tencent.qqlive.ona.activity.VideoDetailActivity'],
+      activityIds: 'com.tencent.qqlive.ona.activity.VideoDetailActivity',
       rules: [
         {
           key: 0,
-          name: '点击[跳过广告]',
+          name: '全屏广告',
+          quickFind: true,
           matches:
             '@[text$="跳过广告"][clickable=true] < LinearLayout > [text="VIP可关闭该广告"]',
           snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12700407',
-            'https://gkd-kit.gitee.io/import/12700433',
+            'https://i.gkd.li/import/12700407',
+            'https://i.gkd.li/import/12700433',
           ],
         },
         {
           key: 1,
-          name: '点击左下角广告横幅右上角x',
+          name: '左下角悬浮广告',
           matches:
             'FrameLayout[childCount=2] > FrameLayout > RelativeLayout > View[id!=null][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/import/13043079',
         },
-      ],
-    },
-    {
-      key: 5,
-      name: '个人中心广告',
-      activityIds: ['com.tencent.qqlive.ona.activity.SplashHomeActivity'],
-      rules: [
         {
-          key: 0,
-          matches:
-            'ViewGroup > TextView + LinearLayout[childCount=2] + ImageView[clickable=true]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12700175',
-        },
-        {
-          key: 1,
-          matches:
-            'RelativeLayout > FrameLayout + @ImageView[clickable=true] + ImageView + ImageView',
-          snapshotUrls: 'https://i.gkd.li/import/12777344',
-        },
-      ],
-    },
-    {
-      key: 19, // 配合应用内其他广告卡片使用，反馈界面的规则都是一样的
-      name: '广告反馈卡片',
-      desc: '自动点击 不感兴趣 -> 确定',
-      activityIds: [
-        'com.tencent.qqlive.ona.activity.SplashHomeActivity',
-        'com.tencent.qqlive.qaduikit.common.dialog.feedback.variable.QAdFeedbackVariableDislikeItemDialog',
-      ],
-      rules: [
-        {
-          key: 1,
-          matches:
-            '[text="关闭这条广告的原因"] +(2) RecyclerView > [text="不感兴趣"]',
-          snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12700303',
-            'https://gkd-kit.gitee.io/import/12829866',
-          ],
-        },
-        {
-          preKeys: [1],
           key: 2,
+          name: '全屏广告2',
+          quickFind: true,
+          matches: '@[text$="关闭广告"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/13526547',
+        },
+        {
+          key: 3,
+          name: '居中广告',
           matches:
-            '[text="关闭这条广告的原因"] + [text="确认"][clickable=true]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12700210',
+            'FrameLayout[childCount=4] > ImageView + FrameLayout + FrameLayout + ImageView[clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/import/13695067',
         },
       ],
+    },
+    {
+      key: 6,
+      name: '全屏广告-首页-广告弹窗',
+      resetMatch: 'app',
+      actionMaximum: 1,
+      quickFind: true,
+      activityIds: 'com.tencent.qqlive.redpacket.rain.OpenRedPacketActivity',
+      rules:
+        '@ImageView[clickable=true] < ViewGroup[childCount=5] < [id="android:id/content"]',
+      snapshotUrls: 'https://i.gkd.li/import/13842643',
     },
     {
       enable: false,
       key: 20,
-      name: '请求开启推送通知弹窗',
-      desc: '自动点击“以后再说”',
-      activityIds:
-        'com.tencent.qqlive.ona.update.trunk.client.TrunkUpdateActivity',
-      rules: 'LinearLayout > @[text="以后再说"] + [text="好的"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12700139',
+      name: '请求通知权限弹窗',
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          actionMaximum: 1,
+          quickFind: true,
+          matches: 'LinearLayout > @[text="以后再说"] + [text="好的"]',
+          snapshotUrls: 'https://i.gkd.li/import/12700139',
+        },
+        {
+          key: 1,
+          actionMaximumKey: 0,
+          matches: '@ImageView + * > [text^="开启通知"]',
+          snapshotUrls: 'https://i.gkd.li/import/13670465',
+        },
+      ],
     },
   ],
 });

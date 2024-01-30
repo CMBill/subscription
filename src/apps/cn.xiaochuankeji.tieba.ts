@@ -3,27 +3,8 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'cn.xiaochuankeji.tieba',
   name: '最右',
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      activityIds: 'cn.xiaochuankeji.tieba.ui.base.SplashActivity',
-      rules: [
-        {
-          matches: '[id="com.byted.pangle:id/tt_splash_skip_btn"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12660905'],
-        },
-        {
-          matches:
-            '[id="cn.xiaochuankeji.tieba:id/splash_ad_view"] [text^="跳过"]',
-          snapshotUrls: [
-            'https://gkd-kit.gitee.io/import/12660955',
-            'https://gkd-kit.gitee.io/import/12660984',
-            'https://gkd-kit.gitee.io/import/12699405',
-          ],
-        },
-      ],
-    },
     {
       key: 1,
       name: '更新弹窗',
@@ -32,7 +13,7 @@ export default defineAppConfig({
         {
           matches:
             '[id="cn.xiaochuankeji.tieba:id/btn_ok"][text^="马上升级"] + [id="cn.xiaochuankeji.tieba:id/btn_cancel"][text="取消"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12660882'],
+          snapshotUrls: ['https://i.gkd.li/import/12660882'],
         },
       ],
     },
@@ -43,7 +24,7 @@ export default defineAppConfig({
       rules: [
         {
           matches: '[text$="青少年模式"] + [text$="知道了"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12660929'],
+          snapshotUrls: ['https://i.gkd.li/import/12660929'],
         },
       ],
     },
@@ -57,14 +38,14 @@ export default defineAppConfig({
           key: 1,
           matches:
             '[id="cn.xiaochuankeji.tieba:id/hh_hermes_ad_tag"] + [id="cn.xiaochuankeji.tieba:id/iv_close"][clickable=true]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12661011'],
+          snapshotUrls: ['https://i.gkd.li/import/12661011'],
         },
         {
           preKeys: [1],
           key: 2,
           matches:
             '[id="cn.xiaochuankeji.tieba:id/iv_dislike_reason"] + LinearLayout > [text="不感兴趣"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12661028'],
+          snapshotUrls: ['https://i.gkd.li/import/12661028'],
         },
       ],
     },
@@ -78,7 +59,7 @@ export default defineAppConfig({
         {
           matches:
             '[id="cn.xiaochuankeji.tieba:id/confirm"][text="打开通知"] + [id="cn.xiaochuankeji.tieba:id/cancel"][text="暂不开启"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12660823'],
+          snapshotUrls: ['https://i.gkd.li/import/12660823'],
         },
       ],
     },
@@ -92,7 +73,7 @@ export default defineAppConfig({
         {
           matches:
             '[text^="开启通知"] +(2) [id="cn.xiaochuankeji.tieba:id/tips_close"]',
-          snapshotUrls: ['https://gkd-kit.gitee.io/import/12660851'],
+          snapshotUrls: ['https://i.gkd.li/import/12660851'],
         },
       ],
     },

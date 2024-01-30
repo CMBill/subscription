@@ -7,9 +7,18 @@ export default defineAppConfig({
     {
       key: 0,
       name: '开屏广告',
-      activityIds: 'com.mymoney.biz.splash.SplashScreenActivity',
-      rules: '[id="com.mymoney:id/external_ad_content"] >2 [text="跳过"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12709192',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      desc: '点击跳过',
+      rules: [
+        {
+          matches:
+            '@View[clickable=true] <3 * <2 * < FrameLayout[id="com.mymoney:id/external_ad_content"]',
+          snapshotUrls: 'https://i.gkd.li/import/13855760',
+        },
+      ],
     },
   ],
 });

@@ -1,10 +1,6 @@
 # 优酷视频
 
-存在 4 规则组 - [com.youku.phone](/src/apps/com.youku.phone.ts)
-
-## 开屏广告
-
-默认禁用 - 占位，暂无作用
+存在 3 规则组 - [com.youku.phone](/src/apps/com.youku.phone.ts)
 
 ## 更新弹窗
 
@@ -12,8 +8,13 @@
 
 ## 青少年模式弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12701050)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12701050)
+- [快照-1](https://i.gkd.li/import/13498556)
 
 ## 视频推荐弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12701029)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12701029)

@@ -5,21 +5,6 @@ export default defineAppConfig({
   name: '芒果TV',
   groups: [
     {
-      key: -1,
-      name: '开屏广告',
-      activityIds: 'com.hunantv.imgo.activity.MainActivity',
-      rules: [
-        {
-          matches: '[id="com.hunantv.imgo.activity:id/layout_boot_skip"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12472612',
-        },
-        {
-          matches: '[id="com.hunantv.imgo.activity:id/ivAd"] >n [text^="跳过"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12472612',
-        },
-      ],
-    },
-    {
       key: 0,
       name: '青少年模式弹窗',
       activityIds: [
@@ -39,31 +24,40 @@ export default defineAppConfig({
           key: 0,
           matches:
             '@[id="com.hunantv.imgo.activity:id/layout_logo"] > [id="com.hunantv.imgo.activity:id/tv_ad_logo"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12472616',
+          snapshotUrls: 'https://i.gkd.li/import/12472616',
         },
         {
           preKeys: 0,
           key: 1,
           matches: '[id="com.hunantv.imgo.activity:id/close_ad"]',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12472615',
+          snapshotUrls: 'https://i.gkd.li/import/12472615',
         },
       ],
     },
     {
       key: 2,
-      name: '应用内广告弹窗',
-      activityIds: 'com.hunantv.imgo.activity.MainActivity',
+      name: '弹窗广告',
       rules: [
         {
           key: 0,
+          activityIds: 'com.hunantv.imgo.activity.MainActivity',
           matches:
             '[id="com.hunantv.imgo.activity:id/imgPromotion"] + [id="com.hunantv.imgo.activity:id/vClosePromotionView"]',
           snapshotUrls: 'https://i.gkd.li/import/12818464',
         },
         {
           key: 1,
+          activityIds: 'com.hunantv.imgo.activity.MainActivity',
           matches: '@TextView[id=null][text=""] - View > Image[id="hotGif"]',
           snapshotUrls: 'https://i.gkd.li/import/12818528',
+        },
+        {
+          key: 2,
+          activityIds: 'com.hunantv.imgo.activity.MainActivity',
+          quickFind: true,
+          matches:
+            '[id="com.hunantv.imgo.activity:id/ivPromotion"] + [id="com.hunantv.imgo.activity:id/btnClose"]',
+          snapshotUrls: 'https://i.gkd.li/import/13761169',
         },
       ],
     },

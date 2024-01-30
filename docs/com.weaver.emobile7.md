@@ -4,4 +4,6 @@
 
 ## 更新弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12673154)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12673154)

@@ -7,13 +7,13 @@ export default defineAppConfig({
     {
       key: 1,
       name: '广告弹窗',
-      matchLauncher: true,
+
       quickFind: true,
       rules: [
         {
           key: 0,
           matches: 'ImageView - FrameLayout > FrameLayout > ImageView',
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12885087',
+          snapshotUrls: 'https://i.gkd.li/import/12885087',
         },
         {
           key: 1,

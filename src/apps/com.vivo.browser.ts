@@ -5,10 +5,10 @@ export default defineAppConfig({
   name: 'vivo浏览器',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      activityIds: 'com.vivo.browser.BrowserActivity',
-      rules: 'TextView[clickable = true && text ^= "跳过" && text.length = 4]',
+      key: 1,
+      name: '免流提示',
+      activityIds: 'com.vivo.browser.pendant.PendantActivity',
+      rules: '[id="com.vivo.browser:id/dialog_button_right"][text="继续浏览"]',
       snapshotUrls: 'https://i.gkd.li/import/12847431',
     },
   ],

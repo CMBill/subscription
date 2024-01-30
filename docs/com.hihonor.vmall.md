@@ -2,6 +2,8 @@
 
 存在 1 规则组 - [com.hihonor.vmall](/src/apps/com.hihonor.vmall.ts)
 
-## 应用内广告弹窗
+## 全屏广告-应用内广告弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/13060881)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13060881)

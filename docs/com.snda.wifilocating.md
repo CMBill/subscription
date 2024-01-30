@@ -1,9 +1,7 @@
 # WiFi万能钥匙
 
-存在 2 规则组 - [com.snda.wifilocating](/src/apps/com.snda.wifilocating.ts)
-
-## 开屏广告
-
-- [快照-0](https://gkd-kit.gitee.io/import/12472605)
+存在 1 规则组 - [com.snda.wifilocating](/src/apps/com.snda.wifilocating.ts)
 
 ## 内部广告
+
+默认禁用

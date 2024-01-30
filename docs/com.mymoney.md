@@ -4,4 +4,6 @@
 
 ## 开屏广告
 
-- [快照-0](https://gkd-kit.gitee.io/import/12709192)
+点击跳过
+
+- [快照-0](https://i.gkd.li/import/13855760)

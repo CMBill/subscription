@@ -5,14 +5,6 @@ export default defineAppConfig({
   name: '航旅纵横',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      quickFind: true,
-      activityIds: 'com.umetrip.android.msky.app.module.startup.SplashActivity',
-      rules: '[id="com.umetrip.android.msky.app:id/tv_jump"][text$="跳过"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12642287',
-    },
-    {
       enable: false,
       key: 8,
       name: '酒店-弹窗广告',
@@ -34,8 +26,8 @@ export default defineAppConfig({
       rules:
         '@[id="com.umetrip.android.msky.app:id/iv_cancel"] - * > [id="com.umetrip.android.msky.app:id/btn_upgrade"]',
       snapshotUrls: [
-        'https://gkd-kit.gitee.io/import/12838294',
-        'https://gkd-kit.gitee.io/import/12838293',
+        'https://i.gkd.li/import/12838294',
+        'https://i.gkd.li/import/12838293',
       ],
     },
     {

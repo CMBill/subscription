@@ -2,33 +2,51 @@
 
 存在 7 规则组 - [com.ss.android.auto](/src/apps/com.ss.android.auto.ts)
 
-## 开屏广告
-
-- [快照-0](https://gkd-kit.gitee.io/import/12605327)
-
 ## 首页推荐卡片广告
 
-- [快照-0](https://gkd-kit.gitee.io/import/12660816)
-- [快照-1](https://gkd-kit.gitee.io/import/12711589)
+默认禁用 - 需二次点击关闭原因
+
+- [快照-0](https://i.gkd.li/import/12660816)
+- [快照-1](https://i.gkd.li/import/13538627)
+- [快照-2](https://i.gkd.li/import/12711589)
 
 ## 升级弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12711631)
+默认禁用
 
-## 首页直播推荐窗口
+- [快照-0](https://i.gkd.li/import/13534445)
 
-- [快照-0](https://gkd-kit.gitee.io/import/12798338)
+## 右下角悬浮窗
 
-## 文章底部广告
+默认禁用
 
-- [快照-0](https://gkd-kit.gitee.io/import/12811597)
+- [快照-0](https://i.gkd.li/import/12798338)
+- [快照-1](https://i.gkd.li/import/13535531)
+- [快照-2](https://i.gkd.li/import/13535933)
+- [快照-3](https://i.gkd.li/import/13535932)
 
-## 评论区广告
+## 文章底部卡片式广告
 
-- [快照-0](https://gkd-kit.gitee.io/import/12811459)
-- [快照-1](https://gkd-kit.gitee.io/import/12825865)
-- [快照-2](https://gkd-kit.gitee.io/import/12900666)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12811597)
+
+## 评论区信息流广告
+
+默认禁用 - 像正常内容的广告
+
+- [快照-0](https://i.gkd.li/import/12811459)
+- [快照-1](https://i.gkd.li/import/12825865)
+- [快照-2](https://i.gkd.li/import/12900666)
 
 ## 请求推送通知弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12840664)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12840664)
+
+## 选车页卡片广告
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13686928)

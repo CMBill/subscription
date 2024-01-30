@@ -5,25 +5,6 @@ export default defineAppConfig({
   name: '掌上公交',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      activityIds: 'com.mygolbs.mybus.LoginActivity',
-      rules: [
-        {
-          matches:
-            '[id="com.mygolbs.mybus:id/splash_container"||id="com.mygolbs.mybus:id/adsRl"] [text^="跳过"]',
-          snapshotUrls: [
-            'https://i.gkd.li/import/12745634',
-            'https://i.gkd.li/import/12790377',
-          ],
-        },
-        {
-          matches: '[id="com.byted.pangle:id/tt_splash_skip_btn"]',
-          snapshotUrls: 'https://i.gkd.li/import/12790485',
-        },
-      ],
-    },
-    {
       key: 1,
       name: '广告卡片',
       activityIds: [
@@ -128,7 +109,7 @@ export default defineAppConfig({
             '[id="com.mygolbs.mybus:id/message"][text$="请开启通知权限"]',
             '[id="com.mygolbs.mybus:id/view_neg"] > [id="com.mygolbs.mybus:id/negativeButton"][text="取消"]',
           ],
-          snapshotUrls: 'https://gkd-kit.gitee.io/import/12715980',
+          snapshotUrls: 'https://i.gkd.li/import/12715980',
         },
       ],
     },
@@ -140,7 +121,7 @@ export default defineAppConfig({
       activityIds: 'com.mygolbs.mybus.guligold.SignSuccessActivity',
       rules:
         '@[id="com.mygolbs.mybus:id/iv_close"] < RelativeLayout - LinearLayout >n [text="签到成功"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12716035',
+      snapshotUrls: 'https://i.gkd.li/import/12716035',
     },
   ],
 });

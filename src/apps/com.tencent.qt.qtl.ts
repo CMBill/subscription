@@ -5,16 +5,13 @@ export default defineAppConfig({
   name: '掌上英雄联盟',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      activityIds: 'com.tencent.zone.main.MainZoneHomeActivity',
-      matchLauncher: true,
+      key: 1,
+      name: '更新弹窗',
       quickFind: true,
-      rules: '[id="com.tencent.qt.qtl:id/skip_layout"] > [text$="跳过"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12793273',
-        'https://i.gkd.li/import/12893534', // com.miui.home.launcher.Launcher
-      ],
+      actionMaximum: 1,
+      matchTime: 10000,
+      rules: '[id="com.tencent.qt.qtl:id/btn_update_cancel"]',
+      snapshotUrls: 'https://i.gkd.li/import/13611286',
     },
   ],
 });

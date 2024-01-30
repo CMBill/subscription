@@ -4,9 +4,14 @@
 
 ## 版本升级弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12838034)
-- [快照-1](https://gkd-kit.gitee.io/import/12840591)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12838034)
+- [快照-1](https://i.gkd.li/import/12840591)
+- [快照-2](https://i.gkd.li/import/13786867)
 
 ## 首页-广告弹窗
 
-- [快照-0](https://gkd-kit.gitee.io/import/12840619)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/12840619)

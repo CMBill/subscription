@@ -5,17 +5,15 @@ export default defineAppConfig({
   name: 'QCY',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      activityIds: [
-        'com.qcymall.earphonesetup.v2ui.activity.AdvertiseActivity',
-        'com.qcymall.earphonesetup.ServiceLaunchActivity',
-      ],
-      rules: '[id="com.qcymall.earphonesetup:id/count_time"] + [text="跳过"]',
-      snapshotUrls: [
-        'https://i.gkd.li/import/12776001',
-        'https://i.gkd.li/import/12776002',
-      ],
+      key: 1,
+      name: '局部广告-我的-广告卡片',
+      quickFind: true,
+      matchTime: 10000,
+      resetMatch: 'activity',
+      activityIds: 'com.qcymall.earphonesetup.v2ui.activity.V2MainActivity',
+      actionMaximum: 1,
+      rules: '[vid="close_img_banner"]',
+      snapshotUrls: 'https://i.gkd.li/import/13874219',
     },
   ],
 });

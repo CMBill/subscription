@@ -3,14 +3,9 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.netdisk.samsung',
   name: '百度网盘-三星版本',
+
+  deprecatedKeys: [0],
   groups: [
-    {
-      key: 0,
-      name: '开屏广告',
-      activityIds: 'com.baidu.netdisk.ui.Navigate',
-      rules: '[id="com.baidu.netdisk.samsung:id/countdown"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12738323',
-    },
     {
       key: 1,
       name: '弹窗广告',
@@ -18,7 +13,7 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules:
         '[id="com.baidu.netdisk.samsung:id/cl_root"] > [id="com.baidu.netdisk.samsung:id/iv_close"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12738331',
+      snapshotUrls: 'https://i.gkd.li/import/12738331',
     },
     {
       key: 2,
@@ -26,7 +21,7 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules:
         '[id="com.baidu.netdisk.samsung:id/buy_product_root"] > [id="com.baidu.netdisk.samsung:id/iv_close"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12738388',
+      snapshotUrls: 'https://i.gkd.li/import/12738388',
     },
     {
       key: 3,
@@ -34,7 +29,7 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules:
         'View[childCount=2] > @TextView[text=""][clickable=true] + TextView[text="专属福利"][clickable=false]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12738404',
+      snapshotUrls: 'https://i.gkd.li/import/12738404',
     },
     {
       key: 4,
@@ -43,7 +38,7 @@ export default defineAppConfig({
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
       rules:
         '@TextView[text=""][clickable=true] - TextView[text="去使用"][clickable=true]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12738449',
+      snapshotUrls: 'https://i.gkd.li/import/12738449',
     },
   ],
 });

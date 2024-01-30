@@ -2,6 +2,8 @@
 
 存在 1 规则组 - [com.mt.mtxx.mtxx](/src/apps/com.mt.mtxx.mtxx.ts)
 
-## 开屏广告
+## 版本更新
 
-- [快照-0](https://gkd-kit.gitee.io/import/12472627)
+默认禁用
+
+- [快照-0](https://i.gkd.li/import/13238352)

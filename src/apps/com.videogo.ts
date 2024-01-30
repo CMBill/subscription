@@ -5,13 +5,20 @@ export default defineAppConfig({
   name: '萤石云视频',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      activityIds: ['com.videogo.login.LoadingActivity'],
+      key: 1,
+      name: '主页广告',
+      quickFind: true,
+      activityIds: ['com.videogo.main.MainTabActivity'],
       rules: [
         {
-          matches: '[id="com.videogo:id/ad_skip_tv"]',
-          snapshotUrls: 'https://i.gkd.li/import/12565356',
+          key: 0,
+          matches: '[id="com.videogo:id/ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/import/13255684',
+        },
+        {
+          preKeys: 0,
+          matches: '[id="com.videogo:id/ad_closead_nointerest"]',
+          snapshotUrls: 'https://i.gkd.li/import/13255697',
         },
       ],
     },

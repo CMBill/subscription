@@ -5,12 +5,15 @@ export default defineAppConfig({
   name: '飞书',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
+      enable: false,
+      key: 1,
+      name: '桌面端登录确认',
       quickFind: true,
-      activityIds: 'com.ss.android.lark.main.app.MainActivity',
-      rules: '[id="com.ss.android.lark:id/splash_skip_btn_layout"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12870733',
+      activityIds:
+        'com.ss.lark.android.passport.biz.feature.sso.suite.SuiteConfirmActivity',
+      rules:
+        '[text="飞书 桌面端登录确认"] +2 [id="com.ss.android.lark:id/login_button"]',
+      snapshotUrls: 'https://i.gkd.li/import/13494960',
     },
     {
       enable: false,
@@ -21,7 +24,7 @@ export default defineAppConfig({
         'com.ss.android.lark.widget.photo.preview.PhotoPagerActivity',
       quickFind: true,
       rules: '[id="com.ss.android.lark:id/look_origin_icon"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12840528',
+      snapshotUrls: 'https://i.gkd.li/import/12840528',
     },
     {
       enable: false,
@@ -32,7 +35,7 @@ export default defineAppConfig({
       quickFind: true,
       rules:
         '@View[id$="original_photo"][checked=false] + [id="com.ss.android.lark:id/original_label"][text="原图"]',
-      snapshotUrls: 'https://gkd-kit.gitee.io/import/12840551',
+      snapshotUrls: 'https://i.gkd.li/import/12840551',
     },
   ],
 });
