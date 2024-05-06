@@ -7,7 +7,7 @@
   "jsdelivr": "./dist/gkd.json5",
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "./dist"
